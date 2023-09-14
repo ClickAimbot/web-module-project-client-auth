@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Navigate } from "react-router-dom";
 
-const PrivateRouteNow = ({component: Component, ...rest}) => {
+const PrivateRoute = ({component: Component, ...rest}) => {
     return <Route {...rest} render={(props) => {
         if (localStorage.getItem("token")) {
             return (<Component {...props} />)
@@ -11,4 +11,4 @@ const PrivateRouteNow = ({component: Component, ...rest}) => {
     }}/>
 }
 
-export default PrivateRouteNow;
+export default PrivateRoute;
